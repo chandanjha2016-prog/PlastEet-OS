@@ -1,1 +1,69 @@
 
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<title>PlastEet - Plastic Khao, Ghar Banao</title>
+<style>
+ body{font-family:'Poppins';background:#e6f7ff;margin:0;}
+ header{background:#0d9488;color:#fff;text-align:center;padding:20px;}
+ .container{max-width:1000px;margin:20px auto;padding:20px;}
+ .card{background:#fff;padding:20px;border-radius:15px;margin:15px 0;box-shadow:0 4px 10px rgba(0,0,0,0.1);}
+ .btn{background:#0d9488;color:#fff;padding:12px;border:none;border-radius:8px;cursor:pointer;}
+ .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px;}
+ .impact{background:#16a34a;color:#fff;text-align:center;padding:20px;border-radius:15px;}
+</style>
+</head>
+<body>
+<header>
+  <h1>♻️ PlastEet OS</h1>
+  <p>Plastic Khao, Ghar Banao | Road Banao | Duniya Bachao</p>
+</header>
+
+<div class="container">
+  <div class="card">
+    <h2>🎯 Problem → Solution</h2>
+    <p><b>Problem:</b> 400 Crore Ton Plastic duniya me. 1000 saal me bhi nahi galta.</p>
+    <p><b>Solution:</b> Us plastic se 3 cheez: <b>1. Road Block 2. Ghar ka Saman 3. Chhat Panel</b></p>
+  </div>
+
+  <div class="card">
+    <h2>🧮 Plastic to Product Calculator</h2>
+    <input id="plastic" type="number" placeholder="Kitna KG Plastic hai?" oninput="calc()">
+    <p id="result"></p>
+  </div>
+
+  <div class="grid">
+    <div class="card"><h3>🛣️ PlastEet Road Block</h3><p>10KG Plastic = 5 Road Block. Normal Eet se 3x majboot. Pani me nahi galta.</p></div>
+    <div class="card"><h3>🪑 PlastFurniture</h3><p>5KG Plastic = 1 Chair/Table. 50% sasta, Termite proof, 20 saal life.</p></div>
+    <div class="card"><h3>🏠 PlastRoof Panel</h3><p>Size by Size Panel. Garmi me 5°C thanda. 1 din me chhat tayyar.</p></div>
+  </div>
+
+  <div class="card">
+    <h2>🤝 Sell Your Plastic / Buy Products</h2>
+    <form onsubmit="alert('Form Submitted! Team contact karegi.');return false">
+      <input placeholder="Naam" required>
+      <input placeholder="City: e.g. Jamalpur, Bihar" required>
+      <select><option>Plastic Dena Hai</option><option>PlastEet Product Lena Hai</option></select>
+      <button class="btn">Submit</button>
+    </form>
+  </div>
+
+  <div class="impact">
+    <h2>🌍 Live Impact</h2>
+    <h1>12,540 KG</h1><p>Plastic Recycled Till Now</p>
+    <h1>1,254</h1><p>Road Blocks Bane</p>
+  </div>
+</div>
+
+<script>
+function calc(){
+  let kg = document.getElementById('plastic').value;
+  let blocks = Math.floor(kg/2);
+  let chairs = Math.floor(kg/5);
+  document.getElementById('result').innerHTML = 
+  `${kg} KG Plastic = <b>${blocks} Road Blocks</b> ya <b>${chairs} Chairs</b> ban sakte hain`;
+}
+</script>
+</body>
+</html>
